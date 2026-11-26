@@ -18,12 +18,14 @@ stage('2. Application Build & Test') {
         bat 'C:\\Users\\STUDENT\\AppData\\Local\\Programs\\Python\\Python313\\python.exe app.py'
     }
 }
-
-        stage('3. Build & Tag Docker Image') {
-            steps {
-                bat "docker build -t ${REGISTRY}/${IMAGE_NAME}:${BUILD_NUMBER} -t ${REGISTRY}/${IMAGE_NAME}:latest ."
-            }
-        }
+stage('3. Build & Tag Docker Image') {
+    steps {
+        bat 'where docker'
+        bat 'docker --version'
+        bat 'docker info'
+        bat 'docker build -t localhost:5000/abh-app:3 -t localhost:5000/abh-app:latest .'
+    }
+}
 
         stage('4. Push Image to Registry') {
             steps {
