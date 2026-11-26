@@ -28,9 +28,10 @@ stage('3. Build & Tag Docker Image') {
     }
 }
 
-       stage('4. Push Image to Registry') {
+      stage('4. Push Image to Registry') {
     steps {
         bat '"C:\\Users\\STUDENT\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" push localhost:5000/abh-app:3'
+
         bat '"C:\\Users\\STUDENT\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" push localhost:5000/abh-app:latest'
     }
 }
