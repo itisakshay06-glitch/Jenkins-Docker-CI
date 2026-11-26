@@ -20,10 +20,11 @@ stage('2. Application Build & Test') {
 }
 stage('3. Build & Tag Docker Image') {
     steps {
-        bat 'where docker'
-        bat 'docker --version'
-        bat 'docker info'
-        bat 'docker build -t localhost:5000/abh-app:3 -t localhost:5000/abh-app:latest .'
+        bat '"C:\\Users\\STUDENT\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" --version'
+
+        bat '"C:\\Users\\STUDENT\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" info'
+
+        bat '"C:\\Users\\STUDENT\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" build -t localhost:5000/abh-app:3 -t localhost:5000/abh-app:latest .'
     }
 }
 
